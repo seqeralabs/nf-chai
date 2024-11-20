@@ -9,6 +9,7 @@ lint:
     - assets/sendmail_template.txt
     - assets/email_template.txt
     - conf/igenomes.config
+    - conf/modules.config
     - conf/igenomes_ignored.config
     - assets/multiqc_config.yml
     - assets/email_template.html
@@ -18,9 +19,13 @@ lint:
     - assets/nf-core-nf-chai_logo_light.png
     - docs/images/nf-core-nf-chai_logo_light.png
     - docs/images/nf-core-nf-chai_logo_dark.png
+    - docs/output.md
+    - docs/README.md
+    - docs/usage.md
     - .github/ISSUE_TEMPLATE/config.yml
     - .github/workflows/awstest.yml
     - .github/workflows/awsfulltest.yml
+    - .github/workflows/linting_comment.yml
   files_unchanged:
     - .github/CONTRIBUTING.md
     - .github/CONTRIBUTING.md
@@ -39,8 +44,10 @@ lint:
     - docs/images/nf-core-nf-chai_logo_light.png
     - docs/images/nf-core-nf-chai_logo_dark.png
     - .github/ISSUE_TEMPLATE/bug_report.yml
+    - LICENSE
   included_configs: false
   multiqc_config: false
+  modules_config: false
   nextflow_config:
     - process.cpus
     - process.memory
