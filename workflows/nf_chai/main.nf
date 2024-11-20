@@ -4,7 +4,6 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { paramsSummaryMap       } from 'plugin/nf-schema'
 include { softwareVersionsToYAML } from '../../subworkflows/nf-core/utils_nfcore_pipeline'
 include { CHAI_1                 } from '../../modules/local/chai_1'
 
@@ -34,7 +33,7 @@ workflow NF_CHAI {
         }
         .set { ch_fasta }
 
-    // Run structure prediction
+    // Run structure prediction with Chai-1
     CHAI_1 (
         ch_fasta,
         msa_dir ? Channel.fromPath(msa_dir) : [],
