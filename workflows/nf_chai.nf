@@ -23,7 +23,6 @@ workflow NF_CHAI {
     main:
 
     ch_versions = Channel.empty()
-    
 
     //
     // Collate and save software versions
