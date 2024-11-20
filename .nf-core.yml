@@ -1,59 +1,68 @@
 bump_version: null
 lint:
   files_exist:
-  - conf/igenomes.config
-  - conf/igenomes_ignored.config
-  - conf/igenomes.config
-  - assets/multiqc_config.yml
-  - assets/email_template.html
-  - assets/sendmail_template.txt
-  - assets/email_template.txt
-  - conf/igenomes.config
-  - conf/igenomes_ignored.config
-  - assets/multiqc_config.yml
-  - assets/email_template.html
-  - assets/sendmail_template.txt
-  - assets/email_template.txt
-  - CODE_OF_CONDUCT.md
-  - assets/nf-core-nf-chai_logo_light.png
-  - docs/images/nf-core-nf-chai_logo_light.png
-  - docs/images/nf-core-nf-chai_logo_dark.png
-  - .github/ISSUE_TEMPLATE/config.yml
-  - .github/workflows/awstest.yml
-  - .github/workflows/awsfulltest.yml
+    - conf/igenomes.config
+    - conf/igenomes_ignored.config
+    - conf/igenomes.config
+    - assets/multiqc_config.yml
+    - assets/email_template.html
+    - assets/sendmail_template.txt
+    - assets/email_template.txt
+    - conf/igenomes.config
+    - conf/modules.config
+    - conf/igenomes_ignored.config
+    - assets/multiqc_config.yml
+    - assets/email_template.html
+    - assets/sendmail_template.txt
+    - assets/email_template.txt
+    - CODE_OF_CONDUCT.md
+    - assets/nf-core-nf-chai_logo_light.png
+    - docs/images/nf-core-nf-chai_logo_light.png
+    - docs/images/nf-core-nf-chai_logo_dark.png
+    - docs/output.md
+    - docs/README.md
+    - docs/usage.md
+    - .github/ISSUE_TEMPLATE/config.yml
+    - .github/workflows/awstest.yml
+    - .github/workflows/awsfulltest.yml
+    - .github/workflows/linting_comment.yml
   files_unchanged:
-  - .github/CONTRIBUTING.md
-  - .github/CONTRIBUTING.md
-  - assets/sendmail_template.txt
-  - .prettierignore
-  - .prettierignore
-  - .prettierignore
-  - .github/CONTRIBUTING.md
-  - .github/CONTRIBUTING.md
-  - assets/sendmail_template.txt
-  - .prettierignore
-  - .prettierignore
-  - .prettierignore
-  - CODE_OF_CONDUCT.md
-  - assets/nf-core-nf-chai_logo_light.png
-  - docs/images/nf-core-nf-chai_logo_light.png
-  - docs/images/nf-core-nf-chai_logo_dark.png
-  - .github/ISSUE_TEMPLATE/bug_report.yml
+    - .github/CONTRIBUTING.md
+    - .github/CONTRIBUTING.md
+    - assets/sendmail_template.txt
+    - .prettierignore
+    - .prettierignore
+    - .prettierignore
+    - .github/CONTRIBUTING.md
+    - .github/CONTRIBUTING.md
+    - assets/sendmail_template.txt
+    - .prettierignore
+    - .prettierignore
+    - .prettierignore
+    - CODE_OF_CONDUCT.md
+    - assets/nf-core-nf-chai_logo_light.png
+    - docs/images/nf-core-nf-chai_logo_light.png
+    - docs/images/nf-core-nf-chai_logo_dark.png
+    - .github/ISSUE_TEMPLATE/bug_report.yml
+    - LICENSE
+    - .github/workflows/branch.yml
+    - .github/workflows/linting.yml
   included_configs: false
   multiqc_config: false
+  modules_config: false
   nextflow_config:
-  - process.cpus
-  - process.memory
-  - process.time
-  - custom_config
-  - params.custom_config_version
-  - params.custom_config_base
-  - manifest.name
-  - manifest.homePage
-  - validation.help.beforeText
-  - validation.help.afterText
-  - validation.summary.beforeText
-  - validation.summary.afterText
+    - process.cpus
+    - process.memory
+    - process.time
+    - custom_config
+    - params.custom_config_version
+    - params.custom_config_base
+    - manifest.name
+    - manifest.homePage
+    - validation.help.beforeText
+    - validation.help.afterText
+    - validation.summary.beforeText
+    - validation.summary.afterText
 nf_core_version: 3.0.2
 org_path: null
 repository_type: pipeline
@@ -67,14 +76,14 @@ template:
   org: seqeralabs
   outdir: .
   skip_features:
-  - igenomes
-  - nf_core_configs
-  - gitpod
-  - codespaces
-  - multiqc
-  - fastqc
-  - email
-  - adaptivecard
-  - slackreport
+    - igenomes
+    - nf_core_configs
+    - gitpod
+    - codespaces
+    - multiqc
+    - fastqc
+    - email
+    - adaptivecard
+    - slackreport
   version: 1.0.0dev
 update: null

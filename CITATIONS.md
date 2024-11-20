@@ -10,9 +10,9 @@
 
 ## Pipeline tools
 
+- [Chai-I](https://www.biorxiv.org/content/10.1101/2024.10.10.615955v1)
 
-
-
+  > Chai Discovery team, Boitreaud J, Dent J, McPartlon M, Meier J, Reis V, Rogozhonikov A, Wu K. Chai-1: Decoding the molecular interactions of life. bioRxiv. doi: 10.1101/2024.10.10.615955.
 
 ## Software packaging/containerisation tools
 

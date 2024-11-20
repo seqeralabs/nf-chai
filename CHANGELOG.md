@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release of seqeralabs/nf-chai, created with the [nf-core](https://nf-co.re/) template.
 
-### `Added`
+### Credits
 
-### `Fixed`
+Special thanks to the following for their contributions to the release:
 
-### `Dependencies`
+- [Friederike Hanssen](https://github.com/FriederikeHanssen)
+- [Maxime Garcia](https://github.com/maxulysse)
 
-### `Deprecated`
+### Enhancements & fixes
+
+- [PR #1](https://github.com/seqeralabs/nf-chai/pull/1) - Delete files not required from nf-core pipeline template
+- [PR #2](https://github.com/seqeralabs/nf-chai/pull/2) - Remove additional customisations from nf-core pipeline template to simplify further
