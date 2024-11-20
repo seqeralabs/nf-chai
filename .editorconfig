@@ -32,3 +32,5 @@ indent_style = unset
 [LICENSE]
 indent_size = unset
 
+[*.{fa,fasta}]
+insert_final_newline = unset

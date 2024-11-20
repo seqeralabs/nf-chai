@@ -106,7 +106,7 @@ def seqeraLogo(monochrome_logs=true) {
         ${colors.purple}  \\__ \\  __/ (_| |  __/ | | (_| |${colors.reset}
         ${colors.purple}  |___/\\___|\\__, |\\___|_|  \\__,_|${colors.reset}
         ${colors.purple}               |_|                ${colors.reset}
-        
+
         ${colors.purple}  ${workflow.manifest.name} ${getWorkflowVersion()}${colors.reset}
         ${dashedLine(monochrome_logs)}
         """.stripIndent()
