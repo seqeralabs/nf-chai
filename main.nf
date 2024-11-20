@@ -13,9 +13,9 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { NF-CHAI  } from './workflows/nf-chai'
-include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_nf-chai_pipeline'
-include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_nf-chai_pipeline'
+include { NF_CHAI  } from './workflows/nf_chai'
+include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_nf_chai_pipeline'
+include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_nf_chai_pipeline'
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     NAMED WORKFLOWS FOR PIPELINE
@@ -25,7 +25,7 @@ include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_nf-c
 //
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
-workflow SEQERALABS_NF-CHAI {
+workflow SEQERALABS_NF_CHAI {
 
     take:
     samplesheet // channel: samplesheet read in from --input
@@ -35,7 +35,7 @@ workflow SEQERALABS_NF-CHAI {
     //
     // WORKFLOW: Run pipeline
     //
-    NF-CHAI (
+    NF_CHAI (
         samplesheet
     )
 }
@@ -63,17 +63,17 @@ workflow {
     //
     // WORKFLOW: Run main workflow
     //
-    SEQERALABS_NF-CHAI (
-        PIPELINE_INITIALISATION.out.samplesheet
+    ch_input = file(params.input, checkIfExists: true)
+    SEQERALABS_NF_CHAI (
+        ch_input
     )
+
     //
     // SUBWORKFLOW: Run completion tasks
     //
     PIPELINE_COMPLETION (
         params.outdir,
-        params.monochrome_logs,
-        
-        
+        params.monochrome_logs
     )
 }
 
