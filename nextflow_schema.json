@@ -20,13 +20,42 @@
                     "pattern": "^\\S+\\.(fa|fasta)$",
                     "description": "Path to input FASTA file containing the sequence(s) to predict.",
                     "help_text": "The input FASTA file should contain one or more sequences in standard FASTA format.",
-                    "fa_icon": "fas fa-file-csv"
+                    "fa_icon": "fas fa-dna"
                 },
                 "outdir": {
                     "type": "string",
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
                     "fa_icon": "fas fa-folder-open"
+                },
+                "msa_dir": {
+                    "type": "string",
+                    "format": "directory-path",
+                    "exists": true,
+                    "description": "Directory containing MSA files.",
+                    "help_text": "If provided, should contain aligned.pqt files for the input sequences.",
+                    "fa_icon": "fas fa-folder-open"
+                },
+                "constraints": {
+                    "type": "string",
+                    "format": "file-path",
+                    "exists": true,
+                    "description": "Path to constraints file.",
+                    "help_text": "File containing structural constraints to guide the prediction.",
+                    "fa_icon": "fas fa-file"
+                },
+                "model_dir": {
+                    "type": "string",
+                    "format": "directory-path",
+                    "exists": true,
+                    "description": "Directory where model weights and other artifacts will be downloaded.",
+                    "help_text": "This directory will be used to store downloaded model weights and other required files.",
+                    "fa_icon": "fas fa-folder-open"
+                },
+                "use_gpus": {
+                    "type": "boolean",
+                    "description": "Run compatible tasks on GPUs rather than CPUs (default).",
+                    "fa_icon": "fas fa-microchip"
                 }
             }
         },
@@ -79,7 +108,6 @@
         {
             "$ref": "#/$defs/input_output_options"
         },
-
         {
             "$ref": "#/$defs/generic_options"
         }

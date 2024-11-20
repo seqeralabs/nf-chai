@@ -41,9 +41,11 @@ workflow {
     //
     // WORKFLOW: Run main workflow
     //
-    ch_input = file(params.input, checkIfExists: true)
     NF_CHAI (
-        ch_input
+        params.input,
+        params.msa_dir,
+        params.constraints,
+        params.model_dir
     )
 
     //

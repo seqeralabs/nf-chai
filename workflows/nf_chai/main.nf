@@ -6,6 +6,7 @@
 
 include { paramsSummaryMap       } from 'plugin/nf-schema'
 include { softwareVersionsToYAML } from '../../subworkflows/nf-core/utils_nfcore_pipeline'
+include { CHAI_1                 } from '../../modules/local/chai_1'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -16,11 +17,30 @@ include { softwareVersionsToYAML } from '../../subworkflows/nf-core/utils_nfcore
 workflow NF_CHAI {
 
     take:
-    ch_fasta // channel: fasta file read in from --input
-
+    fasta_file       // string: path to fasta file read provided via --input parameter
+    msa_dir          // string: path to MSA directory read provided via --msa_dir parameter
+    constraints_file // string: path to constraints file read provided via --constraints parameter
+    model_dir        // string: path to model directory read provided via --model_dir parameter
+    
     main:
 
     ch_versions = Channel.empty()
+
+    // Input channel for FASTA files
+    Channel
+        .fromPath(fasta_file)
+        .map { 
+            fasta -> [ [ id: fasta.simpleName ], fasta ] 
+        }
+        .set { ch_fasta }
+
+    // Run structure prediction
+    CHAI_1 (
+        ch_fasta,
+        msa_dir ? Channel.fromPath(msa_dir) : [],
+        constraints_file ? Channel.fromPath(constraints_file) : []
+    )
+    ch_versions = ch_versions.mix(CHAI_1.out.versions)
 
     //
     // Collate and save software versions
