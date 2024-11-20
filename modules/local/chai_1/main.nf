@@ -2,6 +2,7 @@ process CHAI_1 {
     tag "$meta.id"
     label 'process_high'
     conda "${moduleDir}/environment.yml"
+    container 'wave.seqera.io/wt/afb7cae43f4f/wave/build:gcc_linux-64-14.1.0_python-3.12_pip_chai_lab-0.3.0--490caee20baecaf1'
 
     input:
     tuple val(meta), path(fasta)
@@ -32,7 +33,7 @@ process CHAI_1 {
     stub:
     """
     mkdir -p ${meta.id}
-    touch ${meta.id}/ranked_*.cif")
+    touch ${meta.id}/ranked_${meta.id}.cif
     touch ${meta.id}/ranking_data.json
     touch ${meta.id}/msa_coverage.png
 
@@ -44,8 +45,3 @@ process CHAI_1 {
     END_VERSIONS
     """
 }
-// # Create versions file
-// with open("versions.yml", "w") as f:
-//     f.write('"${task.process}":\\n')
-//     f.write('    python: "' + sys.version.split()[0] + '"\\n')
-//     f.write('    torch: "' + torch.__version__ + '"\\n')
