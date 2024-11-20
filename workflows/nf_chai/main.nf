@@ -4,11 +4,8 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-
 include { paramsSummaryMap       } from 'plugin/nf-schema'
-
-include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
-include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_nf_chai_pipeline'
+include { softwareVersionsToYAML } from '../../subworkflows/nf-core/utils_nfcore_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,7 +16,8 @@ include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_nf_c
 workflow NF_CHAI {
 
     take:
-    ch_samplesheet // channel: samplesheet read in from --input
+    ch_fasta // channel: fasta file read in from --input
+
     main:
 
     ch_versions = Channel.empty()
@@ -33,11 +31,11 @@ workflow NF_CHAI {
             name:  ''  + 'pipeline_software_' +  ''  + 'versions.yml',
             sort: true,
             newLine: true
-        ).set { ch_collated_versions }
-
+        )
+        .set { ch_collated_versions }
 
     emit:
-    versions       = ch_versions                 // channel: [ path(versions.yml) ]
+    versions = ch_versions // channel: [ path(versions.yml) ]
 
 }
 

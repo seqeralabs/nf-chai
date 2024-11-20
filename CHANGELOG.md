@@ -17,3 +17,4 @@ Special thanks to the following for their contributions to the release:
 ### Enhancements & fixes
 
 - [PR #1](https://github.com/seqeralabs/nf-chai/pull/1) - Delete files not required from nf-core pipeline template
+- [PR #2](https://github.com/seqeralabs/nf-chai/pull/2) - Remove additional customisations from nf-core pipeline template to simplify further

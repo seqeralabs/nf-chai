@@ -45,6 +45,8 @@ lint:
     - docs/images/nf-core-nf-chai_logo_dark.png
     - .github/ISSUE_TEMPLATE/bug_report.yml
     - LICENSE
+    - .github/workflows/branch.yml
+    - .github/workflows/linting.yml
   included_configs: false
   multiqc_config: false
   modules_config: false
