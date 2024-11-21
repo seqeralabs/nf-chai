@@ -10,10 +10,9 @@ process CHAI_1 {
     path constraints
 
     output:
-    tuple val(meta), path("${meta.id}/*.cif")            , emit: structures, optional: true
-    tuple val(meta), path("${meta.id}/ranking_data.json"), emit: rankings, optional: true
-    tuple val(meta), path("${meta.id}/msa_coverage.png") , emit: msa_plot, optional: true
-    path "versions.yml"                                  , emit: versions
+    tuple val(meta), path("${meta.id}/*.cif"), emit: structures
+    tuple val(meta), path("${meta.id}/*.npz"), emit: arrays
+    path "versions.yml"                      , emit: versions
 
     script:
     """
@@ -33,9 +32,10 @@ process CHAI_1 {
     stub:
     """
     mkdir -p ${meta.id}
-    touch ${meta.id}/ranked_${meta.id}.cif
-    touch ${meta.id}/ranking_data.json
-    touch ${meta.id}/msa_coverage.png
+    touch ${meta.id}/pred.model_idx_0.cif
+    touch ${meta.id}/pred.model_idx_1.cif
+    touch ${meta.id}/scores.model_idx_0.npz
+    touch ${meta.id}/scores.model_idx_1.npz
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
