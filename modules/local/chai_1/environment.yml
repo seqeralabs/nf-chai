@@ -1,9 +1,11 @@
 channels:
-- conda-forge
-- bioconda
+  - conda-forge
+  - bioconda
+  - nvidia
 dependencies:
-- gcc_linux-64=14.1.0
-- python=3.12
-- pip
-- pip:
-  - chai_lab==0.3.0
+  - gcc_linux-64=14.1.0
+  - python=3.12
+  - cuda=12.1
+  - pip
+  - pip:
+      - chai_lab==0.3.0
