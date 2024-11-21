@@ -45,8 +45,7 @@ workflow {
         params.input,
         params.msa_dir,
         params.constraints,
-        params.model_dir,
-        params.fasta_chunk_size
+        params.model_dir
     )
 
     //
