@@ -10,8 +10,8 @@ process CHAI_1 {
     path constraints
 
     output:
-    tuple val(meta), path("${meta.id}/ranked_*.cif")     , emit: structures
-    tuple val(meta), path("${meta.id}/ranking_data.json"), emit: rankings
+    tuple val(meta), path("${meta.id}/*.cif")            , emit: structures, optional: true
+    tuple val(meta), path("${meta.id}/ranking_data.json"), emit: rankings, optional: true
     tuple val(meta), path("${meta.id}/msa_coverage.png") , emit: msa_plot, optional: true
     path "versions.yml"                                  , emit: versions
 
