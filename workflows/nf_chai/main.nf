@@ -20,7 +20,7 @@ workflow NF_CHAI {
     msa_dir          //  string: path to MSA directory read provided via --msa_dir parameter
     constraints_file //  string: path to constraints file read provided via --constraints parameter
     model_dir        //  string: path to model directory read provided via --model_dir parameter
-    
+
     main:
 
     ch_versions = Channel.empty()
@@ -28,8 +28,8 @@ workflow NF_CHAI {
     // Input channel for FASTA files
     Channel
         .fromPath(fasta_file)
-        .map { 
-            fasta -> [ [ id: fasta.simpleName ], fasta ] 
+        .map {
+            fasta -> [ [ id: fasta.simpleName ], fasta ]
         }
         .set { ch_fasta }
 
