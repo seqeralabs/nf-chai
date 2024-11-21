@@ -56,6 +56,12 @@
                     "type": "boolean",
                     "description": "Run compatible tasks on GPUs rather than CPUs (default).",
                     "fa_icon": "fas fa-microchip"
+                },
+                "fasta_chunk_size": {
+                    "type": "integer",
+                    "description": "Chunk FASTA file with this number of sequences per split.",
+                    "fa_icon": "fas fa-microchip",
+                    "default": 1
                 }
             }
         },
