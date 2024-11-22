@@ -18,29 +18,43 @@
 > [!NOTE]
 > If you are new to Nextflow, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.
 
-First, prepare a FASTA file with your protein sequence(s) that looks as follows:
+First, prepare a FASTA file with entities supported by Chai-1 in the format highlighted below:
 
-`protein_sequences.fa`:
+`multiple_entities.fa`:
 
 ```txt
->protein|name=short-protein-example
-AIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPS
+>protein|name=example-of-long-protein
+AGSHSMRYFSTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASPRGEPRAPWVEQEGPEYWDRETQKYKRQAQTDRVSLRNLRGYYNQSEAGSHTLQWMFGCDLGPDGRLLRGYDQSAYDGKDYIALNEDLRSWTAADTAAQITQRKWEAAREAEQRRAYLEGTCVEWLRRYLENGKETLQRAEHPKTHVTHHPVSDHEATLRCWALGFYPAEITLTWQWDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPEPLTLRWEP
+>protein|name=example-of-short-protein
+AIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM
+>protein|name=example-peptide
+GAAL
+>ligand|name=example-ligand-as-smiles
+CCCCCCCCCCCCCC(=O)O
 ```
 
-Now, you can run the pipeline using:
+Run the pipeline using CPUs with the command below:
 
 ```bash
 nextflow run seqeralabs/nf-chai \
-   -profile <docker/singularity> \
-   --input protein_sequences.fa \
-   --outdir <OUTDIR>
+   --input multiple_entities.fa \
+   --outdir <OUTDIR> \
+   -profile <docker/singularity>
+```
+
+Run the pipeline using GPUs with the command below:
+
+```bash
+nextflow run seqeralabs/nf-chai \
+   --input multiple_entities.fa \
+   --outdir <OUTDIR> \
+   --use_gpus \
+   -profile <docker/singularity>
 ```
 
 ## Credits
 
-seqeralabs/nf-chai was originally written by the Seqera Team.
-
-We thank the following people for their extensive assistance in the development of this pipeline:
+nf-chai was originally written by the Seqera Team.
 
 ## Contributions and Support
 

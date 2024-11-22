@@ -11,6 +11,8 @@ Initial release of seqeralabs/nf-chai, created with the [nf-core](https://nf-co.
 
 Special thanks to the following for their contributions to the release:
 
+- [Adam Talbot](https://github.com/adamrtalbot)
+- [Evan Floden](https://github.com/evanfloden)
 - [Friederike Hanssen](https://github.com/FriederikeHanssen)
 - [Maxime Garcia](https://github.com/maxulysse)
 
@@ -18,3 +20,4 @@ Special thanks to the following for their contributions to the release:
 
 - [PR #1](https://github.com/seqeralabs/nf-chai/pull/1) - Delete files not required from nf-core pipeline template
 - [PR #2](https://github.com/seqeralabs/nf-chai/pull/2) - Remove additional customisations from nf-core pipeline template to simplify further
+- [PR #5](https://github.com/seqeralabs/nf-chai/pull/5) - Add chai-1 functionality to the pipeline
