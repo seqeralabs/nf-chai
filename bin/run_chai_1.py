@@ -28,8 +28,7 @@ def main():
 
     # Validate input FASTA file
     if not args.fasta_file.exists():
-        print(f"Error: FASTA file '{args.fasta_file}' does not exist.", file=sys.stderr)
-        sys.exit(1)
+        raise FileNotFoundError(f"FASTA file '{args.fasta_file}' does not exist.")
 
     # Create the output directory if it doesn't exist
     args.output_dir.mkdir(parents=True, exist_ok=True)
