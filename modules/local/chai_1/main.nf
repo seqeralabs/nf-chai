@@ -19,7 +19,7 @@ process CHAI_1 {
     CHAI_DOWNLOADS_DIR=$downloads_dir \\
     run_chai_1.py \\
         --output-dir ${meta.id} \\
-        --fasta-file ${fasta}  
+        --fasta-file ${fasta}
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
