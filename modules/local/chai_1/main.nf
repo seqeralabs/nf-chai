@@ -6,8 +6,7 @@ process CHAI_1 {
 
     input:
     tuple val(meta), path(fasta)
-    path msa_dir
-    path constraints
+    path weights_dir
 
     output:
     tuple val(meta), path("${meta.id}/*.cif"), emit: structures
@@ -15,11 +14,12 @@ process CHAI_1 {
     path "versions.yml"                      , emit: versions
 
     script:
+    def downloads_dir = weights_dir ?: './downloads'
     """
-    CHAI_DOWNLOADS_DIR=./downloads \\
+    CHAI_DOWNLOADS_DIR=$downloads_dir \\
     run_chai_1.py \\
         --output-dir ${meta.id} \\
-        --fasta-file ${fasta}
+        --fasta-file ${fasta}  
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

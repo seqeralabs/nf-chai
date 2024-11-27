@@ -52,6 +52,8 @@ nextflow run seqeralabs/nf-chai \
    -profile <docker/singularity>
 ```
 
+Set the `--weights_dir` parameter to a location with the pre-downloaded weights required by Chai-1 to avoid having to download them every time you run the pipeline.
+
 ## Credits
 
 nf-chai was originally written by the Seqera Team.
