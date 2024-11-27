@@ -1,0 +1,5 @@
+reports:
+  "*.cif":
+    display: "CIF file containing protein structures"
+  "*.npz":
+    display: "Numpy archive containing protein structures"
