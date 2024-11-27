@@ -22,3 +22,5 @@ Special thanks to the following for their contributions to the release:
 - [PR #2](https://github.com/seqeralabs/nf-chai/pull/2) - Remove additional customisations from nf-core pipeline template to simplify further
 - [PR #5](https://github.com/seqeralabs/nf-chai/pull/5) - Add chai-1 functionality to the pipeline
 - [PR #8](https://github.com/seqeralabs/nf-chai/pull/8) - Add `--weights_dir` parameter to provide pre-downloaded weights to Chai-1
+- [PR #9](https://github.com/seqeralabs/nf-chai/pull/9) - Add reports file for pipeline outputs
+
