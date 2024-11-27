@@ -28,28 +28,11 @@
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
                     "fa_icon": "fas fa-folder-open"
                 },
-                "msa_dir": {
+                "weights_dir": {
                     "type": "string",
                     "format": "directory-path",
                     "exists": true,
-                    "description": "Directory containing MSA files.",
-                    "help_text": "If provided, should contain aligned.pqt files for the input sequences.",
-                    "fa_icon": "fas fa-folder-open"
-                },
-                "constraints": {
-                    "type": "string",
-                    "format": "file-path",
-                    "exists": true,
-                    "description": "Path to constraints file.",
-                    "help_text": "File containing structural constraints to guide the prediction.",
-                    "fa_icon": "fas fa-file"
-                },
-                "model_dir": {
-                    "type": "string",
-                    "format": "directory-path",
-                    "exists": true,
-                    "description": "Directory where model weights and other artifacts will be downloaded.",
-                    "help_text": "This directory will be used to store downloaded model weights and other required files.",
+                    "description": "Directory containing model weights and other artifacts required by Chai-1.",
                     "fa_icon": "fas fa-folder-open"
                 },
                 "use_gpus": {

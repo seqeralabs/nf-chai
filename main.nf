@@ -43,9 +43,7 @@ workflow {
     //
     NF_CHAI (
         params.input,
-        params.msa_dir,
-        params.constraints,
-        params.model_dir
+        params.weights_dir
     )
 
     //

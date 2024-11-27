@@ -16,10 +16,8 @@ include { CHAI_1                 } from '../../modules/local/chai_1'
 workflow NF_CHAI {
 
     take:
-    fasta_file       //  string: path to fasta file read provided via --input parameter
-    msa_dir          //  string: path to MSA directory read provided via --msa_dir parameter
-    constraints_file //  string: path to constraints file read provided via --constraints parameter
-    model_dir        //  string: path to model directory read provided via --model_dir parameter
+    fasta_file  //  string: path to fasta file read provided via --input parameter
+    weights_dir //  string: path to model directory read provided via --weights_directory parameter
 
     main:
 
@@ -36,8 +34,7 @@ workflow NF_CHAI {
     // Run structure prediction with Chai-1
     CHAI_1 (
         ch_fasta,
-        msa_dir ? Channel.fromPath(msa_dir) : [],
-        constraints_file ? Channel.fromPath(constraints_file) : []
+        weights_dir ? Channel.fromPath(weights_dir) : []
     )
     ch_versions = ch_versions.mix(CHAI_1.out.versions)
 
