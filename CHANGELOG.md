@@ -15,6 +15,7 @@ Special thanks to the following for their contributions to the release:
 
 ### Enhancements & fixes
 
+- [PR #11](https://github.com/seqeralabs/nf-chai/pull/11) - Add additional parameters from Chai-1 to pipeline
 - [PR #12](https://github.com/seqeralabs/nf-chai/pull/12) - Add log for GPU/CPU
 
 ## 0.1.0
@@ -37,4 +38,3 @@ Special thanks to the following for their contributions to the release:
 - [PR #5](https://github.com/seqeralabs/nf-chai/pull/5) - Add chai-1 functionality to the pipeline
 - [PR #8](https://github.com/seqeralabs/nf-chai/pull/8) - Add `--weights_dir` parameter to provide pre-downloaded weights to Chai-1
 - [PR #9](https://github.com/seqeralabs/nf-chai/pull/9) - Add reports file for pipeline outputs
-- [PR #11](https://github.com/seqeralabs/nf-chai/pull/11) - Add additional parameters from chai-1 to nextflow config
