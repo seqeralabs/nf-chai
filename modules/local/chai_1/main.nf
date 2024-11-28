@@ -2,7 +2,7 @@ process CHAI_1 {
     tag "$meta.id"
     label 'process_high'
     conda "${moduleDir}/environment.yml"
-    container 'drpatelh/chai_lab:0.3.0'
+    container 'community.wave.seqera.io/library/gcc_linux-64_python_cuda_pip_chai_lab:44cb323409492b49'
 
     input:
     tuple val(meta), path(fasta)

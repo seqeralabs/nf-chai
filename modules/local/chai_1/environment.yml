@@ -8,4 +8,4 @@ dependencies:
   - cuda=12.1
   - pip
   - pip:
-      - chai_lab==0.3.0
+      - chai_lab==0.4.2
