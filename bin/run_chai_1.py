@@ -22,6 +22,31 @@ def main():
         type=Path,
         help="Path to the input FASTA file."
     )
+    # Add optional arguments with current defaults
+    parser.add_argument(
+        "--num-trunk-recycles",
+        type=int,
+        default=3,
+        help="Number of trunk recycles (default: 3)"
+    )
+    parser.add_argument(
+        "--num-diffn-timesteps",
+        type=int,
+        default=200,
+        help="Number of diffusion timesteps (default: 200)"
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Random seed for reproducibility (default: 42)"
+    )
+    parser.add_argument(
+        "--use-esm-embeddings",
+        action="store_true",
+        default=True,
+        help="Use ESM embeddings (enabled by default)"
+    )
 
     # Parse arguments
     args = parser.parse_args()
@@ -40,11 +65,11 @@ def main():
     run_inference(
         fasta_file=args.fasta_file,
         output_dir=args.output_dir,
-        num_trunk_recycles=3,
-        num_diffn_timesteps=200,
-        seed=42,
+        num_trunk_recycles=args.num_trunk_recycles,
+        num_diffn_timesteps=args.num_diffn_timesteps,
+        seed=args.seed,
         device=device,
-        use_esm_embeddings=True,
+        use_esm_embeddings=args.use_esm_embeddings,
     )
 
 if __name__ == "__main__":

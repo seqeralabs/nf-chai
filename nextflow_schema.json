@@ -39,6 +39,34 @@
                     "type": "boolean",
                     "description": "Run compatible tasks on GPUs rather than CPUs (default).",
                     "fa_icon": "fas fa-microchip"
+                },
+                "num_trunk_recycles": {
+                    "type": "integer",
+                    "default": 3,
+                    "fa_icon": "fas fa-recycle",
+                    "description": "Number of trunk recycles",
+                    "hidden": true
+                },
+                "num_diffusion_timesteps": {
+                    "type": "integer",
+                    "default": 200,
+                    "fa_icon": "fas fa-shoe-prints",
+                    "hidden": true,
+                    "description": "Number of diffusion steps to use."
+                },
+                "seed": {
+                    "type": "integer",
+                    "default": 42,
+                    "fa_icon": "fas fa-seedling",
+                    "hidden": true,
+                    "description": "Random seed to be used for Chai-1 calculations"
+                },
+                "use_esm_embeddings": {
+                    "type": "boolean",
+                    "default": true,
+                    "fa_icon": "fas fa-stamp",
+                    "hidden": true,
+                    "description": "Use user-provided esm model embeddings"
                 }
             }
         },
