@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 from chai_lab.chai1 import run_inference
 import torch
+import logging
 
 def main():
     # Set up argument parser
@@ -59,7 +60,13 @@ def main():
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     # Set device for PyTorch
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if torch.cuda.is_available():
+        logging.info("GPU found, using GPU")
+        device = torch.device("cuda")
+    else:
+        logging.info("No GPU found, using CPU")
+        device = "cpu"
+
 
     # Run structure prediction
     run_inference(
