@@ -15,7 +15,7 @@ Special thanks to the following for their contributions to the release:
 
 ### Enhancements & fixes
 
-- [PR #11](https://github.com/seqeralabs/nf-chai/pull/11) - Add additional parameters from Chai-1 to pipeline
+- [PR #11](https://github.com/seqeralabs/nf-chai/pull/11) - Expose additional Chai-1 parameters in the pipeline
 - [PR #12](https://github.com/seqeralabs/nf-chai/pull/12) - Add log for GPU/CPU
 
 ## 0.1.0
