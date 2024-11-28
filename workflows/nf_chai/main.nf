@@ -16,8 +16,12 @@ include { CHAI_1                 } from '../../modules/local/chai_1'
 workflow NF_CHAI {
 
     take:
-    fasta_file            //  string: path to fasta file read provided via --input parameter
-    weights_dir           //  string: path to model directory read provided via --weights_directory parameter
+    fasta_file              //  string: path to fasta file read provided via --input parameter
+    weights_dir             //  string: path to model directory read provided via --weights_directory parameter
+    num_trunk_recycles      // integer: Number of trunk recycles
+    num_diffusion_timesteps // integer: Number of diffusion steps to use
+    seed                    // integer: Random seed to be used for Chai-1 calculations
+    use_esm_embeddings      // boolean: Use user-provided esm model embeddings
 
     main:
 
@@ -35,10 +39,10 @@ workflow NF_CHAI {
     CHAI_1 (
         ch_fasta,
         weights_dir ? Channel.fromPath(weights_dir) : [],
-        params.num_trunk_recycles,
-        params.num_diffn_timesteps,
-        params.seed,
-        params.use_esm_embeddings
+        num_trunk_recycles,
+        num_diffusion_timesteps,
+        seed,
+        use_esm_embeddings
     )
     ch_versions = ch_versions.mix(CHAI_1.out.versions)
 

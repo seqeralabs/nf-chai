@@ -26,8 +26,7 @@
                     "type": "string",
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
-                    "fa_icon": "fas fa-folder-open",
-                    "help_text": ""
+                    "fa_icon": "fas fa-folder-open"
                 },
                 "weights_dir": {
                     "type": "string",
@@ -45,9 +44,10 @@
                     "type": "integer",
                     "default": 3,
                     "fa_icon": "fas fa-recycle",
+                    "description": "Number of trunk recycles",
                     "hidden": true
                 },
-                "num_diffn_timesteps": {
+                "num_diffusion_timesteps": {
                     "type": "integer",
                     "default": 200,
                     "fa_icon": "fas fa-shoe-prints",
@@ -59,15 +59,14 @@
                     "default": 42,
                     "fa_icon": "fas fa-seedling",
                     "hidden": true,
-                    "description": "Random seed to be used for Chai-1 calculations",
-                    "help_text": ""
+                    "description": "Random seed to be used for Chai-1 calculations"
                 },
                 "use_esm_embeddings": {
                     "type": "boolean",
                     "default": true,
                     "fa_icon": "fas fa-stamp",
                     "hidden": true,
-                    "description": "Use user-provided esm model embeddings?"
+                    "description": "Use user-provided esm model embeddings"
                 }
             }
         },
