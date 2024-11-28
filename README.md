@@ -9,9 +9,11 @@
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
 [![Launch on Seqera Platform](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Seqera%20Platform-%234256e7)](https://cloud.seqera.io/launch?pipeline=https://github.com/seqeralabs/nf-chai)
 
+## POC implementation of Chai-1 in Nextflow
+
 ## Introduction
 
-**nf-chai** is a bioinformatics pipeline for running the [Chai-1](https://github.com/chaidiscovery/chai-lab) protein prediction algorithm on an input set of protein sequences in FASTA format. The pipeline has been written in Nextflow to generate results for downstream analysis in a reproducible, scalable and portable way.
+**nf-chai** is a simple, proof-of-concept bioinformatics pipeline for running the [Chai-1](https://github.com/chaidiscovery/chai-lab) protein prediction algorithm on an input set of protein sequences in FASTA format. The pipeline has been written in Nextflow to generate results for downstream analysis in a reproducible, scalable and portable way.
 
 ## Usage
 
