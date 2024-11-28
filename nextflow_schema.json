@@ -26,7 +26,8 @@
                     "type": "string",
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
-                    "fa_icon": "fas fa-folder-open"
+                    "fa_icon": "fas fa-folder-open",
+                    "help_text": ""
                 },
                 "weights_dir": {
                     "type": "string",
@@ -39,6 +40,34 @@
                     "type": "boolean",
                     "description": "Run compatible tasks on GPUs rather than CPUs (default).",
                     "fa_icon": "fas fa-microchip"
+                },
+                "num_trunk_recycles": {
+                    "type": "integer",
+                    "default": 3,
+                    "fa_icon": "fas fa-recycle",
+                    "hidden": true
+                },
+                "num_diffn_timesteps": {
+                    "type": "integer",
+                    "default": 200,
+                    "fa_icon": "fas fa-shoe-prints",
+                    "hidden": true,
+                    "description": "Number of diffusion steps to use."
+                },
+                "seed": {
+                    "type": "integer",
+                    "default": 42,
+                    "fa_icon": "fas fa-seedling",
+                    "hidden": true,
+                    "description": "Random seed to be used for Chai-1 calculations",
+                    "help_text": ""
+                },
+                "use_esm_embeddings": {
+                    "type": "boolean",
+                    "default": true,
+                    "fa_icon": "fas fa-stamp",
+                    "hidden": true,
+                    "description": "Use user-provided esm model embeddings?"
                 }
             }
         },
