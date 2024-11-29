@@ -65,14 +65,7 @@ def main():
     # Create the output directory if it doesn't exist
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Set device for PyTorch
-    if torch.cuda.is_available():
-        logging.info("GPU found, using GPU")
-        device = torch.device("cuda")
-    else:
-        logging.info("No GPU found, using CPU")
-        device = "cpu"
-
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Run structure prediction
     run_inference(
