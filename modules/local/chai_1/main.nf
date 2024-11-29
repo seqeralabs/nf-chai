@@ -19,9 +19,11 @@ process CHAI_1 {
     path "versions.yml"                      , emit: versions
 
     script:
+    def downloads_dir = weights_dir ?: './downloads'
     def esm_flag = use_esm_embeddings ? '--use-esm-embeddings' : ''
     def msa_flag = msa_dir            ? '--msa_directory=$msa_dir' : ''
     """
+    CHAI_DOWNLOADS_DIR=$downloads_dir \\
     run_chai_1.py \\
         --fasta-file ${fasta} \\
         --output-dir . \\
@@ -29,8 +31,7 @@ process CHAI_1 {
         --num-diffn-timesteps ${num_diffusion_timesteps} \\
         --seed ${seed} \\
         ${esm_flag} \\
-        ${msa_flag} \\
-        $args
+        ${msa_flag}
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

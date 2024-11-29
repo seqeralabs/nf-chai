@@ -48,6 +48,12 @@ def main():
         default=True,
         help="Use ESM embeddings (enabled by default)"
     )
+    parser.add_argument(
+        "--msa_dir",
+        type=str,
+        default=None,
+        help="Directory containing precomputed multiple sequence alignments (MSA)."
+    )
 
     # Parse arguments
     args = parser.parse_args()
@@ -77,7 +83,7 @@ def main():
         seed=args.seed,
         device=device,
         use_esm_embeddings=args.use_esm_embeddings,
-        msa_directory=msa_dir,
+        msa_directory=args.msa_dir,
     )
 
 if __name__ == "__main__":
