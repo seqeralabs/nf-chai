@@ -25,7 +25,7 @@ process CHAI_1 {
     CHAI_DOWNLOADS_DIR=$downloads_dir \\
     run_chai_1.py \\
         --fasta-file ${fasta} \\
-        --output-dir . \\
+        --output-dir ${meta.id} \\
         --num-trunk-recycles ${num_trunk_recycles} \\
         --num-diffn-timesteps ${num_diffusion_timesteps} \\
         --seed ${seed} \\
