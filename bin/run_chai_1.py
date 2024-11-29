@@ -76,7 +76,7 @@ def main():
         seed=args.seed,
         device=device,
         use_esm_embeddings=args.use_esm_embeddings,
-        msa_directory=Path(args.msa_dir),
+        msa_directory=Path(args.msa_dir) if args.msa_dir else None,
     )
 
 if __name__ == "__main__":
