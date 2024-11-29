@@ -67,6 +67,13 @@
                     "fa_icon": "fas fa-stamp",
                     "hidden": true,
                     "description": "Use user-provided esm model embeddings"
+                },
+                "msa_dir": {
+                    "type": "string",
+                    "default": "/Users/florian.wuennemann/2_Areas/Seqera/github_repos/nf-chai-main/msa_dir_test",
+                    "hidden": true,
+                    "description": "Directory containing precomputed multiple-sequence alignments",
+                    "fa_icon": "fas fa-align-justify"
                 }
             }
         },

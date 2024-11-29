@@ -47,7 +47,8 @@ workflow {
         params.num_trunk_recycles,
         params.num_diffusion_timesteps,
         params.seed,
-        params.use_esm_embeddings
+        params.use_esm_embeddings,
+        params.msa_dir
     )
 
     //

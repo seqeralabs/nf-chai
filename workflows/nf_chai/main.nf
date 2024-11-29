@@ -22,6 +22,7 @@ workflow NF_CHAI {
     num_diffusion_timesteps // integer: Number of diffusion steps to use
     seed                    // integer: Random seed to be used for Chai-1 calculations
     use_esm_embeddings      // boolean: Use user-provided esm model embeddings
+    msa_dir                 //  string: path to the directory containing multiple sequence alignments (msa)
 
     main:
 
@@ -42,7 +43,8 @@ workflow NF_CHAI {
         num_trunk_recycles,
         num_diffusion_timesteps,
         seed,
-        use_esm_embeddings
+        use_esm_embeddings,
+        msa_dir ? Channel.fromPath(msa_dir) : []
     )
     ch_versions = ch_versions.mix(CHAI_1.out.versions)
 

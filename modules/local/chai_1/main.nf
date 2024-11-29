@@ -11,6 +11,7 @@ process CHAI_1 {
     val num_diffusion_timesteps
     val seed
     val use_esm_embeddings
+    path msa_dir
 
     output:
     tuple val(meta), path("${meta.id}/*.cif"), emit: structures
@@ -19,6 +20,7 @@ process CHAI_1 {
 
     script:
     def esm_flag = use_esm_embeddings ? '--use-esm-embeddings' : ''
+    def msa_flag = msa_dir            ? '--msa_directory=$msa_dir' : ''
     """
     run_chai_1.py \\
         --fasta-file ${fasta} \\
@@ -27,6 +29,7 @@ process CHAI_1 {
         --num-diffn-timesteps ${num_diffusion_timesteps} \\
         --seed ${seed} \\
         ${esm_flag} \\
+        ${msa_flag} \\
         $args
 
     cat <<-END_VERSIONS > versions.yml
