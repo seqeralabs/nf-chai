@@ -20,7 +20,7 @@ process CHAI_1 {
     script:
     def downloads_dir = weights_dir   ?: './downloads'
     def esm_flag = use_esm_embeddings ? '--use-esm-embeddings' : ''
-    def msa_flag = msa_dir            ? "--msa_directory=$msa_dir" : ''
+    def msa_flag = msa_dir            ? "--msa_dir=$msa_dir" : ''
     """
     CHAI_DOWNLOADS_DIR=$downloads_dir \\
     run_chai_1.py \\
