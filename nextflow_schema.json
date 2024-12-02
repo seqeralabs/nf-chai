@@ -35,6 +35,13 @@
                     "description": "Directory containing model weights and other artifacts required by Chai-1.",
                     "fa_icon": "fas fa-folder-open"
                 },
+                "msa_dir": {
+                    "type": "string",
+                    "format": "directory-path",
+                    "exists": true,
+                    "description": "Directory containing precomputed multiple-sequence alignments",
+                    "fa_icon": "fas fa-align-justify"
+                },
                 "use_gpus": {
                     "type": "boolean",
                     "description": "Run compatible tasks on GPUs rather than CPUs (default).",
@@ -67,12 +74,6 @@
                     "fa_icon": "fas fa-stamp",
                     "hidden": true,
                     "description": "Use user-provided esm model embeddings"
-                },
-                "msa_dir": {
-                    "type": "string",
-                    "hidden": true,
-                    "description": "Directory containing precomputed multiple-sequence alignments",
-                    "fa_icon": "fas fa-align-justify"
                 }
             }
         },
