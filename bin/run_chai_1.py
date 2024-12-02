@@ -48,6 +48,12 @@ def main():
         default=True,
         help="Use ESM embeddings (enabled by default)"
     )
+    parser.add_argument(
+        "--msa-dir",
+        type=str,
+        default=None,
+        help="Directory containing precomputed multiple sequence alignments (MSA)."
+    )
 
     # Parse arguments
     args = parser.parse_args()
@@ -67,7 +73,6 @@ def main():
         logging.info("No GPU found, using CPU")
         device = "cpu"
 
-
     # Run structure prediction
     run_inference(
         fasta_file=args.fasta_file,
@@ -77,6 +82,7 @@ def main():
         seed=args.seed,
         device=device,
         use_esm_embeddings=args.use_esm_embeddings,
+        msa_directory=Path(args.msa_dir) if args.msa_dir else None,
     )
 
 if __name__ == "__main__":

@@ -56,6 +56,8 @@ nextflow run seqeralabs/nf-chai \
 
 Set the `--weights_dir` parameter to a location with the pre-downloaded weights required by Chai-1 to avoid having to download them every time you run the pipeline.
 
+To further improve prediction performance using pre-built multiple sequence alignments (MSA) with evolutionary information, set the `--msa_dir` parameter to a location with [`*.aligned.pqt`](https://github.com/chaidiscovery/chai-lab/tree/main/examples/msas#adding-msa-evolutionary-information) format as required by Chai-1.
+
 ## Credits
 
 nf-chai was originally written by the Seqera Team.

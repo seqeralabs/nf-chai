@@ -7,6 +7,7 @@ process CHAI_1 {
     input:
     tuple val(meta), path(fasta)
     path weights_dir
+    path msa_dir
     val num_trunk_recycles
     val num_diffusion_timesteps
     val seed
@@ -18,16 +19,19 @@ process CHAI_1 {
     path "versions.yml"                      , emit: versions
 
     script:
-    def esm_flag = use_esm_embeddings ? '--use-esm-embeddings' : ''
+    def downloads_dir = weights_dir ?: './downloads'
+    def msa_path = msa_dir ? "--msa-dir=$msa_dir" : ''
+    def use_esm = use_esm_embeddings ? '--use-esm-embeddings' : ''
     """
+    CHAI_DOWNLOADS_DIR=$downloads_dir \\
     run_chai_1.py \\
         --fasta-file ${fasta} \\
-        --output-dir . \\
+        --output-dir ${meta.id} \\
         --num-trunk-recycles ${num_trunk_recycles} \\
         --num-diffn-timesteps ${num_diffusion_timesteps} \\
         --seed ${seed} \\
-        ${esm_flag} \\
-        $args
+        ${use_esm} \\
+        ${msa_path}
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

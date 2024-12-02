@@ -17,7 +17,8 @@ workflow NF_CHAI {
 
     take:
     fasta_file              //  string: path to fasta file read provided via --input parameter
-    weights_dir             //  string: path to model directory read provided via --weights_directory parameter
+    weights_dir             //  string: path to model directory read provided via --weights_dir parameter
+    msa_dir                 //  string: path to the directory containing multiple sequence alignments (msa)
     num_trunk_recycles      // integer: Number of trunk recycles
     num_diffusion_timesteps // integer: Number of diffusion steps to use
     seed                    // integer: Random seed to be used for Chai-1 calculations
@@ -39,6 +40,7 @@ workflow NF_CHAI {
     CHAI_1 (
         ch_fasta,
         weights_dir ? Channel.fromPath(weights_dir) : [],
+        msa_dir ? Channel.fromPath(msa_dir) : [],
         num_trunk_recycles,
         num_diffusion_timesteps,
         seed,
