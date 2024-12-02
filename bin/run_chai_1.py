@@ -49,7 +49,7 @@ def main():
         help="Use ESM embeddings (enabled by default)"
     )
     parser.add_argument(
-        "--msa_dir",
+        "--msa-dir",
         type=str,
         default=None,
         help="Directory containing precomputed multiple sequence alignments (MSA)."
@@ -65,7 +65,13 @@ def main():
     # Create the output directory if it doesn't exist
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    # Set device for PyTorch
+    if torch.cuda.is_available():
+        logging.info("GPU found, using GPU")
+        device = torch.device("cuda")
+    else:
+        logging.info("No GPU found, using CPU")
+        device = "cpu"
 
     # Run structure prediction
     run_inference(
