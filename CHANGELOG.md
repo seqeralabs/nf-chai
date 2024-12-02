@@ -19,6 +19,7 @@ Special thanks to the following for their contributions to the release:
 - [PR #12](https://github.com/seqeralabs/nf-chai/pull/12) - Add log for GPU/CPU
 - [PR #13](https://github.com/seqeralabs/nf-chai/pull/13) - Bump `chai_lab` version to 0.4.2
 - [PR #14](https://github.com/seqeralabs/nf-chai/pull/14) - Add parameter to provide multiple sequence alignment directory to Chai-1
+- [PR #15](https://github.com/seqeralabs/nf-chai/pull/15) - Add `test_full_msa` profile to test provision of MSAs
 
 ## 0.1.0
 
