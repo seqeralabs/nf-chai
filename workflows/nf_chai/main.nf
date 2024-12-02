@@ -16,7 +16,7 @@ include { CHAI_1                 } from '../../modules/local/chai_1'
 workflow NF_CHAI {
 
     take:
-    fasta_fle               //  string: path to fasta file read provided via --input parameter
+    fasta_file              //  string: path to fasta file read provided via --input parameter
     weights_dir             //  string: path to model directory read provided via --weights_dir parameter
     msa_dir                 //  string: path to the directory containing multiple sequence alignments (msa)
     num_trunk_recycles      // integer: Number of trunk recycles
