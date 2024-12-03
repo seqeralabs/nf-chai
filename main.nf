@@ -43,7 +43,12 @@ workflow {
     //
     NF_CHAI (
         params.input,
-        params.weights_dir
+        params.weights_dir,
+        params.msa_dir,
+        params.num_trunk_recycles,
+        params.num_diffusion_timesteps,
+        params.seed,
+        params.use_esm_embeddings
     )
 
     //
