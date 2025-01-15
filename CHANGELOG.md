@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.2.1
 
 Patch release to fix:
+
 - Running Chai-1 on cpu
 - Enabling folding multiple fasta files in parallel
 
