@@ -39,8 +39,8 @@ workflow NF_CHAI {
     // Run structure prediction with Chai-1
     CHAI_1 (
         ch_fasta,
-        weights_dir ? Channel.fromPath(weights_dir) : [],
-        msa_dir ? Channel.fromPath(msa_dir) : [],
+        weights_dir ? Channel.fromPath(weights_dir).collect() : [],
+        msa_dir ? Channel.fromPath(msa_dir).collect() : [],
         num_trunk_recycles,
         num_diffusion_timesteps,
         seed,
