@@ -71,7 +71,7 @@ def main():
         device = torch.device("cuda")
     else:
         logging.info("No GPU found, using CPU")
-        device = "cpu"
+        device = torch.device("cpu")
 
     # Run structure prediction
     run_inference(
