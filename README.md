@@ -20,7 +20,7 @@
 > [!NOTE]
 > If you are new to Nextflow, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.
 
-First, prepare a FASTA file with entities supported by Chai-1 in the format highlighted below:
+First, prepare a FASTA file with entities supported by Chai-1 in the format highlighted below. You can also provide a directory with multiple FASTA files by specifying the `--input` parameter with a directory path like this: `--input "/path/to/fasta_files/*.fasta|*.fa"`.
 
 `multiple_entities.fa`:
 
