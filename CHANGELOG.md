@@ -9,6 +9,7 @@ Patch release to fix:
 
 - Running Chai-1 on cpu
 - Enabling folding multiple fasta files in parallel
+- Updated README
 
 ## 0.2.0
 
