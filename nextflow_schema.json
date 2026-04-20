@@ -17,9 +17,9 @@
                     "format": "path",
                     "exists": true,
                     "mimetype": "text/csv",
-                    "pattern": "^\\S+\\.(fa|fasta)$",
+                    "pattern": "^\\S+\\.(fa|fasta|csv)$",
                     "description": "Path to input FASTA file containing the sequence(s) to predict.",
-                    "help_text": "The input FASTA file should contain one or more sequences in standard FASTA format.",
+                    "help_text": "The input file should contain one or more sequences in standard FASTA format. Can be a .fa, .fasta, or .csv file (for Seqera Platform datasets).",
                     "fa_icon": "fas fa-dna"
                 },
                 "outdir": {
