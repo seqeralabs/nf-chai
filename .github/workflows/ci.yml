@@ -64,7 +64,7 @@ jobs:
 
       - name: Set up Miniconda
         if: matrix.profile == 'conda'
-        uses: conda-incubator/setup-miniconda@a4260408e20b96e80095f42ff7f1a15b27dd94ca # v3
+        uses: conda-incubator/setup-miniconda@fc2d68f6413eb2d87b895e92f8584b5b94a10167 # v3
         with:
           miniconda-version: "latest"
           auto-update-conda: true
